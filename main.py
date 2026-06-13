@@ -466,3 +466,22 @@ class CustomCNN5Layer(nn.Module):
         x = self.block5(x)
         x = self.classifier(x)
         return x
+
+
+
+#--------------------------NEXT STEP------------------------
+# Import the custom architectures from our script file
+from models.custom_cnn import CustomCNN3Layer, CustomCNN4Layer, CustomCNN5Layer
+
+# Automatically route calculations to active GPU if available
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"[INFO] Running execution pipeline on device standard: {device}\n")
+
+# Instantiate and verify structural footprints
+cnn3 = CustomCNN3Layer(num_classes=8).to(device)
+cnn4 = CustomCNN4Layer(num_classes=8).to(device)
+cnn5 = CustomCNN5Layer(num_classes=8).to(device)
+
+print(f"[SUCCESS] 3-Layer Architecture Compiled: {type(cnn3)}")
+print(f"[SUCCESS] 4-Layer Architecture Compiled: {type(cnn4)}")
+print(f"[SUCCESS] 5-Layer Architecture Compiled: {type(cnn5)}")
