@@ -1,11 +1,8 @@
-# DOWNLOAD DATASET
-
 %%writefile scripts/download_data.py
-# ==============================================================================
 # Name: Muhammad Usman
 # File: scripts/download_data.py
-# Task: 1.1 - Download the dataset into the repo structure
-# ==============================================================================
+# Note: This code is to be run in google colab
+
 
 import os
 import urllib.request
